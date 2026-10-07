@@ -1,0 +1,20 @@
+name: Security
+# Central policy: staafnet/creanode-ci (pinned by commit SHA)
+
+on:
+  pull_request:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: security-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  security:
+    uses: staafnet/creanode-ci/.github/workflows/security-reusable.yml@9708c8cc729e3f3d45ac3526dd5b9caa122c9052
