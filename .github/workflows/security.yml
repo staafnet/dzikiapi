@@ -1,0 +1,19 @@
+name: Security
+
+on:
+  pull_request:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: security-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  security:
+    uses: staafnet/creanode-ci/.github/workflows/security-reusable.yml@20c559eded4f32ecc164f2991fc3ce5b0fdf0e9f
