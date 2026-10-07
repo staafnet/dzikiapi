@@ -17,4 +17,4 @@ concurrency:
 
 jobs:
   security:
-    uses: staafnet/creanode-ci/.github/workflows/security-reusable.yml@20c559eded4f32ecc164f2991fc3ce5b0fdf0e9f
+    uses: staafnet/creanode-ci/.github/workflows/security-reusable.yml@dbab503520a0c9cf0282339a4ca55f5de91da4ae
